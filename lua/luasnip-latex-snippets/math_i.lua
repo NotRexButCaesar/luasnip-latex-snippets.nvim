@@ -39,32 +39,36 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "pmat", name = "pmat" }, "\\begin{pmatrix} $1 \\end{pmatrix} $0"),
 
     parse_snippet(
-      { trig = "lr", name = "left( right)" },
+      { trig = "tfe", name = "| evaluated at" },
+      "\\left. ${2:${TM_SELECTED_TEXT}} \\right|_{$1} $0"
+    ),
+    parse_snippet(
+      { trig = "tf", name = "left( right)" },
       "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
     ),
     parse_snippet(
-      { trig = "lr(", name = "left( right)" },
+      { trig = "tf)", name = "left( right)" },
       "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
     ),
     parse_snippet(
-      { trig = "lr|", name = "left| right|" },
+      { trig = "tf|", name = "left| right|" },
       "\\left| ${1:${TM_SELECTED_TEXT}} \\right| $0"
     ),
     parse_snippet(
-      { trig = "lr{", name = "left{ right}" },
+      { trig = "tf}", name = "left{ right}" },
       "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
     ),
     parse_snippet(
-      { trig = "lr[", name = "left[ right]" },
+      { trig = "tf]", name = "left[ right]" },
       "\\left[ ${1:${TM_SELECTED_TEXT}} \\right] $0"
     ),
     parse_snippet(
-      { trig = "lra", name = "leftangle rightangle" },
+      { trig = "tfa", name = "leftangle rightangle" },
       "\\left< ${1:${TM_SELECTED_TEXT}} \\right>$0"
     ),
 
     parse_snippet(
-      { trig = "lrb", name = "left\\{ right\\}" },
+      { trig = "tfb", name = "left\\{ right\\}" },
       "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
     ),
 
