@@ -91,8 +91,8 @@ function M.retrieve(is_math)
     ),
 
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore "),
-    parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0 "),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dbox{$1}$0 "),
+    parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0 "),
 
     parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0 "),
     parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0 "),
