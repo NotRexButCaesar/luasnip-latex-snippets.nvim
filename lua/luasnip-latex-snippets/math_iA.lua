@@ -101,7 +101,7 @@ function M.retrieve(is_math)
       "\\frac{\\mathrm{d}${1:V}}{\\mathrm{d}${2:x}} $0"
     ),
 
-    parse_snippet({ trig = "eol", name = "end of line" }, "\\\\\\\\\\\\n"),
+    parse_snippet({ trig = "eol", name = "end of line" }, "\\\\\\\\\\\n"),
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0"),
     parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0"),
