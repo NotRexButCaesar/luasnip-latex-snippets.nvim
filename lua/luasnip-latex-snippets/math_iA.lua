@@ -90,6 +90,30 @@ function M.retrieve(is_math)
         return string.format("\\overleftarrow{%s}", snip.captures[1])
       end, {})
     ),
+    s(
+      {
+        trig = "(%a+)mm",
+        wordTrig = false,
+        regTrig = true,
+        name = "mm",
+        priority = 100,
+      },
+      f(function(_, snip)
+        return string.format("%s_m", snip.captures[1])
+      end, {})
+    ),
+    s(
+      {
+        trig = "(%a+)nn",
+        wordTrig = false,
+        regTrig = true,
+        name = "nn",
+        priority = 100,
+      },
+      f(function(_, snip)
+        return string.format("%s_n", snip.captures[1])
+      end, {})
+    ),
     
     s({ trig = "eol", name = "newline" }, t({ [[\\]], "" })),
 
@@ -116,14 +140,7 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "EE", name = "exists" }, "\\exists "),
     parse_snippet({ trig = "AA", name = "forall" }, "\\forall "),
-    parse_snippet({ trig = "xnn", name = "xn" }, "x_{n}"),
-    parse_snippet({ trig = "ynn", name = "yn" }, "y_{n}"),
-    parse_snippet({ trig = "xii", name = "xi" }, "x_{i}"),
-    parse_snippet({ trig = "yii", name = "yi" }, "y_{i}"),
-    parse_snippet({ trig = "xjj", name = "xj" }, "x_{j}"),
-    parse_snippet({ trig = "yjj", name = "yj" }, "y_{j}"),
     parse_snippet({ trig = "xp1", name = "x" }, "x_{n+1}"),
-    parse_snippet({ trig = "xmm", name = "x" }, "x_{m}"),
     parse_snippet({ trig = "R0+", name = "R0+" }, "\\mathbb{R}_0^+"),
 
     parse_snippet({ trig = "notin", name = "not in " }, "\\not\\in"),
