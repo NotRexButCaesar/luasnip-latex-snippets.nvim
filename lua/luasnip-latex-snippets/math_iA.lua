@@ -90,6 +90,17 @@ function M.retrieve(is_math)
       end, {})
     ),
 
+    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"),
+
+    parse_snippet(
+      { trig = "part", name = "d/dx" },
+      "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
+    ),
+    parse_snippet(
+      { trig = "ddx", name = "d/dx" },
+      "\\frac{\\mathrm{d${1:V}}$2}{\\mathrm{d${3:x}$4}} $0"
+    ),
+
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore "),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0 "),
     parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0 "),
