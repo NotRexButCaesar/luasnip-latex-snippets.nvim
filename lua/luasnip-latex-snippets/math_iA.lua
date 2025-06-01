@@ -98,7 +98,7 @@ function M.retrieve(is_math)
     ),
     parse_snippet(
       { trig = "ddx", name = "d/dx" },
-      "\\frac{\\mathrm{d${1:V}}$2}{\\mathrm{d${3:x}$4}} $0"
+      "\\frac{\\mathrm{d}${1:V}}{\\mathrm{d}${2:x}} $0"
     ),
 
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore "),
