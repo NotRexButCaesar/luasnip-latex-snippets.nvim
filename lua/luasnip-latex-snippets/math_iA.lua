@@ -94,7 +94,7 @@ function M.retrieve(is_math)
     s({ trig = "eol", name = "newline" }, t({ [[\\]], "" })),
     parse_snippet({ trig = " mm", name = "plusminus" }, "_m"),
     parse_snippet({ trig = " nn", name = "plusminus" }, "_n"),
-    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"),
+    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{${1:n=1}}^{${2:\\infty}} $3"),
     parse_snippet(
       { trig = "part", name = "d/dx" },
       "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
