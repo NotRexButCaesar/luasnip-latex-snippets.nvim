@@ -89,9 +89,10 @@ function M.retrieve(is_math)
         return string.format("\\overleftarrow{%s}", snip.captures[1])
       end, {})
     ),
+    
+    s({ trig = "eol", name = "newline" }, t({ [[\\]], "" }))
 
     parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"),
-
     parse_snippet(
       { trig = "part", name = "d/dx" },
       "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
@@ -101,15 +102,6 @@ function M.retrieve(is_math)
       "\\frac{\\mathrm{d}${1:V}}{\\mathrm{d}${2:x}} $0"
     ),
 
-    parse_snippet({ trig = "eol1", name = "end of line" }, "\n"),
-    parse_snippet({ trig = "eol2", name = "end of line" }, "\\n"),
-    parse_snippet({ trig = "eol3", name = "end of line" }, "\\\n"),
-    parse_snippet({ trig = "eol4", name = "end of line" }, "\\\\n"),
-    parse_snippet({ trig = "eol5", name = "end of line" }, "\\\\\n"),
-    parse_snippet({ trig = "eol6", name = "end of line" }, "\\\\\\n"),
-    parse_snippet({ trig = "eol7", name = "end of line" }, "\\\\\\\n"),
-    parse_snippet({ trig = "eol8", name = "end of line" }, "\\\\\\\\n"),
-    parse_snippet({ trig = "eol9", name = "end of line" }, "\\\\\\\\\n"),
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0"),
     parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0"),
