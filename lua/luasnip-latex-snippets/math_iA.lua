@@ -90,33 +90,10 @@ function M.retrieve(is_math)
         return string.format("\\overleftarrow{%s}", snip.captures[1])
       end, {})
     ),
-    s(
-      {
-        trig = "(%a+)mm",
-        wordTrig = false,
-        regTrig = true,
-        name = "mm",
-        priority = 100,
-      },
-      f(function(_, snip)
-        return string.format("%s_m", snip.captures[1])
-      end, {})
-    ),
-    s(
-      {
-        trig = "(%a+)nn",
-        wordTrig = false,
-        regTrig = true,
-        name = "nn",
-        priority = 100,
-      },
-      f(function(_, snip)
-        return string.format("%s_n", snip.captures[1])
-      end, {})
-    ),
     
     s({ trig = "eol", name = "newline" }, t({ [[\\]], "" })),
-
+    parse_snippet({ trig = " mm", name = "plusminus" }, "_n"),
+    parse_snippet({ trig = " nn", name = "plusminus" }, "_m"),
     parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"),
     parse_snippet(
       { trig = "part", name = "d/dx" },
@@ -126,7 +103,6 @@ function M.retrieve(is_math)
       { trig = "ddx", name = "d/dx" },
       "\\frac{\\mathrm{d}${1:V}}{\\mathrm{d}${2:x}} $0"
     ),
-
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0"),
     parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0"),
