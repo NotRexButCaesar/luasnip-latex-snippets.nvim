@@ -12,7 +12,6 @@ function M.retrieve(is_math)
   }) --[[@as function]]
 
   return {
-    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{n=${1:1}}^{${2:\\infty}} ${3:a_n z^n}"),
 
     parse_snippet(
       { trig = "taylor", name = "taylor" },
@@ -25,15 +24,6 @@ function M.retrieve(is_math)
     parse_snippet(
       { trig = "prod", name = "product" },
       "\\prod_{${1:n=${2:1}}}^{${3:\\infty}} ${4:${TM_SELECTED_TEXT}} $0"
-    ),
-
-    parse_snippet(
-      { trig = "part", name = "d/dx" },
-      "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
-    ),
-    parse_snippet(
-      { trig = "ddx", name = "d/dx" },
-      "\\frac{\\mathrm{d${1:V}}}{\\mathrm{d${2:x}}} $0"
     ),
 
     parse_snippet({ trig = "pmat", name = "pmat" }, "\\begin{pmatrix} $1 \\end{pmatrix} $0"),
