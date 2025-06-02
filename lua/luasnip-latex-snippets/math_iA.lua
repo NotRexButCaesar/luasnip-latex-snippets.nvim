@@ -109,9 +109,9 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "pm", name = "plusminus" }, "\\pm"),
     parse_snippet({ trig = "()", name = "tab parentheses" }, "()$1$0"),
 
-    parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0"),
-    parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3"),
-    parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
+    parse_snippet({ trig = " td", name = "to the ... power ^{}" }, "^{$1}$0"),
+    parse_snippet({ trig = " cb", name = "Cube ^3" }, "^3"),
+    parse_snippet({ trig = " sr", name = "Square ^2" }, "^2"),
 
     parse_snippet({ trig = "EE", name = "exists" }, "\\exists"),
     parse_snippet({ trig = "AA", name = "forall" }, "\\forall"),
@@ -145,7 +145,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = ">>", name = ">>" }, "\\gg"),
     parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),
 
-    parse_snippet({ trig = "stt", name = "text subscript" }, "_\\text{$1}$0"),
+    parse_snippet({ trig = " stt", name = "text subscript" }, "_\\text{$1}$0"),
     parse_snippet({ trig = "tt", name = "text" }, "\\text{$1}$0"),
 
     parse_snippet({ trig = "xx", name = "cross" }, "\\times"),
