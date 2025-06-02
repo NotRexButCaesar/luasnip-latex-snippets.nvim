@@ -94,7 +94,7 @@ function M.retrieve(is_math)
     s({ trig = "eol", name = "newline" }, t({ [[\\]], "" })),
     parse_snippet({ trig = " mm", name = "plusminus" }, "_m"),
     parse_snippet({ trig = " nn", name = "plusminus" }, "_n"),
-    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{${1:n=1}}^{${2:\\infty}} $3"),
+    parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{${1:n=1}}^{${2:\\infty}}$3"),
     parse_snippet(
       { trig = "part", name = "d/dx" },
       "\\frac{\\partial $1}{\\partial ${2:x}} $0"
@@ -111,11 +111,11 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "td", name = "to the ... power ^{}" }, "^{$1}$0"),
     parse_snippet({ trig = "rd", name = "to the ... power ^{()}" }, "^{($1)}$0"),
-    parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3 "),
+    parse_snippet({ trig = "cb", name = "Cube ^3" }, "^3"),
     parse_snippet({ trig = "sr", name = "Square ^2" }, "^2"),
 
-    parse_snippet({ trig = "EE", name = "exists" }, "\\exists "),
-    parse_snippet({ trig = "AA", name = "forall" }, "\\forall "),
+    parse_snippet({ trig = "EE", name = "exists" }, "\\exists"),
+    parse_snippet({ trig = "AA", name = "forall" }, "\\forall"),
     parse_snippet({ trig = "xp1", name = "x" }, "x_{n+1}"),
     parse_snippet({ trig = "R0+", name = "R0+" }, "\\mathbb{R}_0^+"),
 
@@ -146,7 +146,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = ">>", name = ">>" }, "\\gg"),
     parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),
 
-    parse_snippet({ trig = "stt", name = "text subscript" }, "_\\text{$1} $0"),
+    parse_snippet({ trig = "stt", name = "text subscript" }, "_\\text{$1}$0"),
     parse_snippet({ trig = "tt", name = "text" }, "\\text{$1}$0"),
 
     parse_snippet({ trig = "xx", name = "cross" }, "\\times"),
@@ -168,14 +168,14 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "NN", name = "n" }, "\\mathbb{N}"),
     parse_snippet({ trig = "||", name = "mid" }, " \\mid "),
     parse_snippet({ trig = "Nn", name = "cap" }, "\\cap "),
-    parse_snippet({ trig = "bmat", name = "bmat" }, "\\begin{bmatrix} $1 \\end{bmatrix} $0"),
-    parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
+    parse_snippet({ trig = "bmat", name = "bmat" }, "\\begin{bmatrix}$1\\end{bmatrix}$0"),
+    parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i\\in${2:I}}}$0"),
     parse_snippet({ trig = "DD", name = "D" }, "\\mathbb{D}"),
     parse_snippet({ trig = "HH", name = "H" }, "\\mathbb{H}"),
     parse_snippet({ trig = "lll", name = "l" }, "\\ell"),
     parse_snippet(
       { trig = "dint", name = "integral", priority = 300 },
-      "\\int_{${1:-\\infty}}^{${2:\\infty}} ${3:${TM_SELECTED_TEXT}} $0"
+      "\\int_{${1:-\\infty}}^{${2:\\infty}}${3:${TM_SELECTED_TEXT}}$0"
     ),
 
     parse_snippet({ trig = "==", name = "equals" }, [[&= $1 \\\\]]),
