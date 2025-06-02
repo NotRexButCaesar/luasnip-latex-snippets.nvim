@@ -97,11 +97,11 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "sum", name = "sum" }, "\\sum_{${1:n=1}}^{${2:\\infty}} $3"),
     parse_snippet(
       { trig = "part", name = "d/dx" },
-      "\\frac{\\partial ${1:V}}{\\partial ${2:x}} $0"
+      "\\frac{\\partial $1}{\\partial ${2:x}} $0"
     ),
     parse_snippet(
       { trig = "ddx", name = "d/dx" },
-      "\\frac{\\mathrm{d}${1:V}}{\\mathrm{d}${2:x}} $0"
+      "\\frac{\\mathrm{d}$1}{\\mathrm{d}${2:x}} $0"
     ),
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0"),
