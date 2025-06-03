@@ -103,9 +103,10 @@ function M.retrieve(is_math)
       { trig = "ddx", name = "d/dx" },
       "\\frac{\\mathrm{d}$1}{\\mathrm{d}${2:x}} $0"
     ),
+    parse_snippet({ trig = "sq", name = "\\sqrt{}" }, "\\sqrt{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
-    parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{$1}$0"),
-    parse_snippet({ trig = "box", name = "box" }, "\\boxed{$1}$0"),
+    parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{${1:${TM_SELECTED_TEXT}}}$0"),
+    parse_snippet({ trig = "box", name = "box" }, "\\boxed{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "pm", name = "plusminus" }, "\\pm"),
     parse_snippet({ trig = "()", name = "tab parentheses" }, "()$1$0"),
 
@@ -133,7 +134,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "</", name = "normal" }, "\\triangleleft"),
     parse_snippet({ trig = "floor", name = "floor" }, "\\left\\lfloor $1 \\right\\rfloor$0"),
     parse_snippet({ trig = "mcal", name = "mathcal" }, "\\mathcal{$1}$0"),
-    parse_snippet({ trig = "//", name = "Fraction" }, "\\frac{$1}{$2}$0"),
+    parse_snippet({ trig = "//", name = "Fraction" }, "\\frac{${1:${TM_SELECTED_TEXT}}}{$2}$0"),
     parse_snippet({ trig = "\\\\\\", name = "setminus" }, "\\setminus"),
     parse_snippet({ trig = "->", name = "to", priority = 100 }, "\\to"),
     parse_snippet({ trig = "-->", name = "long to", priority = 200 }, "\\longrightarrow"),
