@@ -1,6 +1,8 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local f = ls.function_node
+local i = ls.insert_node
+local c = ls.capture_node
 
 local M = {}
 
@@ -10,9 +12,13 @@ local postfix_trig = function(match)
   return string.format("(%s)", match)
 end
 
-local postfix_node = f(function(_, snip)
-  return string.format("\\%s{$1}", snip.captures[1])
-end, {})
+local postfix_node= {
+  t("\\"),
+  c(1),
+  t("{"),
+  i(1),
+  t("}"),
+}
 
 local build_snippet = function(trig, node, match, priority, name)
   return s({
