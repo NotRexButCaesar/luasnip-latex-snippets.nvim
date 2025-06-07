@@ -111,6 +111,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "box", name = "box" }, "\\boxed{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "pm", name = "plusminus" }, "\\pm"),
     parse_snippet({ trig = "()", name = "tab parentheses" }, "()$1$0"),
+    parse_snippet({ trig = " {}", name = "braces" }, "{}1$0"),
 
     parse_snippet({ trig = " td", name = "to the ... power ^{}" }, "^{$1}$0"),
     parse_snippet({ trig = " cb", name = "Cube ^3" }, "^3"),
