@@ -103,6 +103,8 @@ function M.retrieve(is_math)
       { trig = "ddx", name = "d/dx" },
       "\\frac{\\mathrm{d}$1}{\\mathrm{d}${2:x}} $0"
     ),
+    parse_snippet({ trig = "erf", name = "\\erf{}" }, "\\erf{${1:${TM_SELECTED_TEXT}}}$0"),
+    parse_snippet({ trig = "erfc", name = "\\erfc{}" }, "\\erfc{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "sq", name = "\\sqrt{}" }, "\\sqrt{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "ergo", name = "therefore" }, "\\therefore"),
     parse_snippet({ trig = "dbox", name = "dashbox" }, "\\dboxed{${1:${TM_SELECTED_TEXT}}}$0"),
