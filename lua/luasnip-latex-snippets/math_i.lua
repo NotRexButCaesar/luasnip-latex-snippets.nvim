@@ -33,11 +33,7 @@ function M.retrieve(is_math)
       "\\left. ${2:${TM_SELECTED_TEXT}} \\right|_{$1} $0"
     ),
     parse_snippet(
-      { trig = "tf", name = "left( right)" },
-      "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
-    ),
-    parse_snippet(
-      { trig = "tf)", name = "left( right)" },
+      { trig = "tf()", name = "left( right)" },
       "\\left( ${1:${TM_SELECTED_TEXT}} \\right) $0"
     ),
     parse_snippet(
@@ -45,11 +41,11 @@ function M.retrieve(is_math)
       "\\left| ${1:${TM_SELECTED_TEXT}} \\right| $0"
     ),
     parse_snippet(
-      { trig = "tf}", name = "left{ right}" },
+      { trig = "tf{}", name = "left{ right}" },
       "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
     ),
     parse_snippet(
-      { trig = "tf]", name = "left[ right]" },
+      { trig = "tf[]", name = "left[ right]" },
       "\\left[ ${1:${TM_SELECTED_TEXT}} \\right] $0"
     ),
     parse_snippet(
@@ -59,6 +55,10 @@ function M.retrieve(is_math)
 
     parse_snippet(
       { trig = "tfb", name = "left\\{ right\\}" },
+      "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
+    ),
+    parse_snippet(
+      { trig = "tfp", name = "left\\{ right\\}" },
       "\\left\\{ ${1:${TM_SELECTED_TEXT}} \\right\\\\} $0"
     ),
 
